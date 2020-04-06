@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import 'colors';
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+body,
+html {
+  font-family: 'Quicksand', sans-serif;
+  background-color: $white;
+}
+#App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  footer {
+    margin-top: auto;
+  }
+}
+.container {
+  max-width: 1100px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.not-found {
+  margin: auto;
+  a {
+    color: $fadered;
+  }
+}

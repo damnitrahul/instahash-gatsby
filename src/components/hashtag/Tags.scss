@@ -1,0 +1,88 @@
+@import '../../scss/colors';
+.tag {
+  padding: 0.2rem 0.8rem;
+  position: relative;
+  margin: 0.5rem;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 200px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border: solid 2px transparent;
+  box-shadow: 0 0 20px rgba($color: $yellow, $alpha: 0.2);
+  transition: border 300ms ease-in-out, box-shadow 200ms ease-in-out;
+
+  p {
+    display: block;
+    text-align: center;
+    padding: 0;
+    &.hash {
+      font-weight: bolder;
+      color: $red;
+    }
+    &.count {
+      font-size: 1rem;
+      font-style: italic;
+    }
+  }
+  &:before {
+    content: attr(data-title);
+    position: absolute;
+    top: 115%;
+    background-color: $black;
+    color: $white;
+    font-size: 0.9rem;
+    padding: 0.2rem 0.4rem;
+    white-space: nowrap;
+    border-radius: 5px;
+    width: auto;
+    left: 0;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: top 200ms ease, opacity 200ms ease;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 111%;
+    background-color: $black;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    width: 10px;
+    height: 10px;
+    z-index: 1;
+    left: 10%;
+    visibility: hidden;
+    opacity: 0;
+    transition: top 200ms ease, opacity 200ms ease;
+  }
+  &:hover {
+    border: solid 2px rgba($color: $red, $alpha: 1);
+
+    box-shadow: 0 0 50px 10px rgba($color: $fadered, $alpha: 0.2);
+    // box-shadow: 0 0 16px 2px rgba($color: $red, $alpha: 0.2);
+    &:before {
+      top: 110%;
+      visibility: visible;
+      opacity: 1;
+    }
+    &:after {
+      top: 106%;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  .tag {
+    p {
+      font-size: 1rem;
+      &.count {
+        font-size: 0.9rem;
+        font-style: italic;
+      }
+    }
+  }
+}

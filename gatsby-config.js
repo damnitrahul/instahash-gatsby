@@ -5,5 +5,10 @@
  */
 
 module.exports = {
-  /* Your site config here */
-}
+  siteMetadata: {
+    title: 'InstaHash',
+    author: 'damnitrahul',
+    authorName: 'Rahul Raj'
+  },
+  plugins: ['gatsby-plugin-sass', 'gatsby-plugin-react-helmet']
+};

@@ -1,0 +1,59 @@
+@import '../../scss/colors';
+.downloader-form {
+  padding: 4rem 0rem;
+  .form-group {
+    input {
+      display: inline-block;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.3rem;
+      padding: 0.5rem 1rem;
+      width: 85%;
+      color: $black;
+      border: none;
+      background: #ffffff;
+    }
+    button {
+      display: inline-block;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.3rem;
+      padding: 0.5rem 1rem;
+      width: 15%;
+      background-color: $white;
+      cursor: pointer;
+      border: none;
+      background: #ffffff;
+      svg {
+        fill: $black;
+        height: 20px;
+        width: 20px;
+      }
+      &:hover {
+        background-color: rgba($color: $yellow, $alpha: 0.1);
+      }
+    }
+    input,
+    button {
+      &:focus {
+        outline: none;
+      }
+    }
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 15px;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+    transition: border 250ms ease-in-out, background-color 7s ease-in-out,
+      box-shadow 350ms ease;
+
+    &:focus-within {
+      outline: none;
+      box-shadow: 0 0 9px 3px rgba($color: $yellow, $alpha: 0.5);
+    }
+  }
+
+  &.active .form-group {
+    border-radius: 15px 15px 0 0;
+    background-color: #fff;
+  }
+}

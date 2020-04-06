@@ -1,0 +1,56 @@
+.profile {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 16px rgba($color: #000000, $alpha: 0.1);
+  .profile-details {
+    text-align: center;
+    .profile-name {
+      font-size: 1.2rem;
+      .verify-icon {
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        svg {
+          margin-bottom: -30%;
+          width: 100%;
+          height: 100%;
+          fill: #3897f0;
+        }
+      }
+      .full-name {
+        color: rgb(104, 104, 104);
+      }
+    }
+    .profile-meta {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .profile-bio {
+      padding: 1rem;
+    }
+  }
+  .profile-img {
+    border: 2px solid rgba($color: #000000, $alpha: 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      display: block;
+    }
+    .profile-download {
+      a {
+        border-top: 2px solid rgba($color: #000000, $alpha: 0.05);
+        padding: 0.4rem;
+        display: block;
+        text-align: center;
+        color: #444;
+      }
+    }
+  }
+}

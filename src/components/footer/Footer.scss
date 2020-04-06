@@ -1,0 +1,12 @@
+@import '../../scss/colors';
+footer {
+  box-shadow: 0 0 16px rgba($color: $black, $alpha: 0.1);
+  text-align: center;
+  a {
+    color: $fadered;
+    transition: color 200ms ease;
+    &:hover {
+      color: $red;
+    }
+  }
+}

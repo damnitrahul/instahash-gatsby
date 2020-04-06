@@ -1,0 +1,29 @@
+@import '../../scss/colors';
+.tag-bundle {
+  padding: 1rem;
+  max-width: 600px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: border 350ms ease-in-out, box-shadow 200ms ease;
+
+  &:hover {
+    box-shadow: 0 0 16px 2px rgba($color: $red, $alpha: 0.2);
+    border: solid 2px rgba($color: $red, $alpha: 1);
+  }
+  .hash-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    color: $yellow;
+    span.copy-text {
+      transition: 200ms ease color;
+      color: $black;
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+}

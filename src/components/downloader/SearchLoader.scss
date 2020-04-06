@@ -1,0 +1,18 @@
+@import '../../scss/colors';
+
+.search-loader {
+  max-width: 500px;
+  max-height: 300px;
+  overflow-x: auto;
+  padding: 0 1rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff00;
+  & > div {
+    border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
