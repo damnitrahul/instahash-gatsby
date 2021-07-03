@@ -1,46 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import './Downloader.scss';
-import { fetchUsers, fetchProfile } from '../../fetchFunctions/Functions';
-import icon from '../../icons/icons.svg';
-import SearchLoader from './SearchLoader';
-import Profile from './Profile';
+import React, { useState, useEffect } from "react"
+import "./Downloader.scss"
+import { fetchUsers, fetchProfile } from "../../fetchFunctions/Functions"
+import icon from "../../icons/icons.svg"
+import SearchLoader from "./SearchLoader"
+import Profile from "./Profile"
+import { debounce } from "throttle-debounce"
 
 function Downloader() {
-  const [search, setSearch] = useState('');
-  const [user, setUser] = useState({ loading: true, data: [], error: false });
-  const [profile, setProfile] = useState({ loading: false, userProfile: '' });
+  const [search, setSearch] = useState("")
+  const [user, setUser] = useState({ loading: true, data: [], error: false })
+  const [profile, setProfile] = useState({ loading: false, userProfile: "" })
 
+  // useEffect(() => {
+  //   if (search.length !== 0) fetchUsers(search, setUser);
+  // }, [search]);
   useEffect(() => {
-    if (search.length !== 0) fetchUsers(search, setUser);
-  }, [search]);
-  useEffect(() => {
-    fetchProfile('instagram', setProfile);
-  }, []);
+    fetchProfile("instagram", setProfile)
+  }, [])
 
   // const handleFetch = e => {
   //   e.preventDefault();
   //   fetchUsers(search, setUser);
   // };
   const handleInputChange = e => {
-    setSearch(e.target.value);
-  };
+    setSearch(e.target.value)
+    ss(e)
+  }
+  const ss = debounce(250, e => fetchUsers(e, setUser))
 
   const handleProfileLoad = username => {
-    setUser(st => ({ ...st, data: [] }));
-    fetchProfile(username, setProfile);
-  };
+    setUser(st => ({ ...st, data: [] }))
+    fetchProfile(username, setProfile)
+  }
 
   const handleProfileSubmit = e => {
-    e.preventDefault();
-    setUser(st => ({ ...st, data: [] }));
-    fetchProfile(search, setProfile);
-  };
+    e.preventDefault()
+    setUser(st => ({ ...st, data: [] }))
+    fetchProfile(search, setProfile)
+  }
 
   return (
     <section>
       <div className="container">
         <div
-          className={`downloader-form ${user.data.length !== 0 && 'active'}`}
+          className={`downloader-form ${user.data.length !== 0 && "active"}`}
         >
           <form onSubmit={handleProfileSubmit}>
             <div className="form-group">
@@ -69,14 +72,14 @@ function Downloader() {
         </div>
 
         {user.error && (
-          <p style={{ textAlign: 'center' }}>
+          <p style={{ textAlign: "center" }}>
             No Users Found, Please Try Again!
           </p>
         )}
-        {profile.userProfile !== '' && <Profile profile={profile} />}
+        {profile.userProfile !== "" && <Profile profile={profile} />}
       </div>
     </section>
-  );
+  )
 }
 
-export default Downloader;
+export default Downloader
